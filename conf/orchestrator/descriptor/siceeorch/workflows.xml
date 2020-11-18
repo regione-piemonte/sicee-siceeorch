@@ -1,0 +1,113 @@
+
+<workflows>
+
+	<workflow name="siceeorchElencoRegioni" type="resource" location="siceeorchElencoRegioni.xml" />
+
+	<workflow name="siceeorchElencoProvince" type="resource" location="siceeorchElencoProvince.xml" />
+
+	<workflow name="siceeorchElencoComuni" type="resource" location="siceeorchElencoComuni.xml" />
+
+	<workflow name="siceeorchGetDescrizioneRegione" type="resource" location="siceeorchGetDescrizioneRegione.xml" />
+
+	<workflow name="siceeorchGetDescrizioneComune" type="resource" location="siceeorchGetDescrizioneComune.xml" />
+
+	<workflow name="siceeorchGetDescrizioneProvincia" type="resource" location="siceeorchGetDescrizioneProvincia.xml" />
+
+	<workflow name="siceeorchGetVieByCodiceIstat" type="resource" location="siceeorchGetVieByCodiceIstat.xml" />
+
+	<workflow name="siceeorchGetViaById" type="resource" location="siceeorchGetViaById.xml" />
+
+	<workflow name="siceeorchInserisciAllegato" type="resource" location="siceeorchInserisciAllegato.xml" />
+
+	<workflow name="siceeorchInserisciDocumento" type="resource" location="siceeorchInserisciDocumento.xml" />
+
+	<workflow name="siceeorchCancellaDocumento" type="resource" location="siceeorchCancellaDocumento.xml" />
+
+	<workflow name="siceeorchRicercaDocumento" type="resource" location="siceeorchRicercaDocumento.xml" />
+
+	<workflow name="siceeorchCreaAlberatura" type="resource" location="siceeorchCreaAlberatura.xml" />
+
+	<workflow name="siceeorchFindElencoCertificatori" type="resource" location="siceeorchFindElencoCertificatori.xml" />
+
+	<workflow name="siceeorchFindAce" type="resource" location="siceeorchFindAce.xml" />
+
+	<workflow name="siceeorchFindCertificatore" type="resource" location="siceeorchFindCertificatore.xml" />
+
+	<workflow name="siceeorchElencoTitoli" type="resource" location="siceeorchElencoTitoli.xml" />
+
+	<workflow name="siceeorchFindNotaio" type="resource" location="siceeorchFindNotaio.xml" />
+
+	<workflow name="siceeorchUpdateInvioLog" type="resource" location="siceeorchUpdateInvioLog.xml" />
+
+	<workflow name="siceeorchGetParametro" type="resource" location="siceeorchGetParametro.xml" />
+
+	<workflow name="siceeorchVerificaDocumento" type="resource" location="siceeorchVerificaDocumento.xml" />
+
+	<workflow name="siceeorchGetMimeTypeInfo" type="resource" location="siceeorchGetMimeTypeInfo.xml" />
+
+	<workflow name="siceeorchIsProductEnabled" type="resource" location="siceeorchIsProductEnabled.xml" />
+
+	<workflow name="siceeorchIsServiceEnabled" type="resource" location="siceeorchIsServiceEnabled.xml" />
+
+	<workflow name="siceeorchIsUserEnabled" type="resource" location="siceeorchIsUserEnabled.xml" />
+
+	<workflow name="siceeorchFindAceSostitutivi" type="resource" location="siceeorchFindAceSostitutivi.xml" />
+
+	<workflow name="siceeorchGetStampaCertificato" type="resource" location="siceeorchGetStampaCertificato.xml" />
+
+	<workflow name="siceeorchGetStampaRicevutaInvioAce" type="resource" location="siceeorchGetStampaRicevutaInvioAce.xml" />
+
+	<workflow name="siceeorchVerificaDocumentoNewDosign" type="resource" location="siceeorchVerificaDocumentoNewDosign.xml" />
+
+	<workflow name="siceeorchStartMdpTransaction" type="resource" location="siceeorchStartMdpTransaction.xml" />
+
+	<workflow name="siceeorchGetMdpPaymentMode" type="resource" location="siceeorchGetMdpPaymentMode.xml" />
+
+	<workflow name="siceeorchGetMdpTransactionState" type="resource" location="siceeorchGetMdpTransactionState.xml" />
+
+	<workflow name="siceeorchFindAceFiltro" type="resource" location="siceeorchFindAceFiltro.xml" />
+
+	<workflow name="siceeorchFindAceFiltroCount" type="resource" location="siceeorchFindAceFiltroCount.xml" />
+
+	<workflow name="siceeorchFindAceFlgPregresso" type="resource" location="siceeorchFindAceFlgPregresso.xml" />
+
+	<workflow name="siceeorchGetDettaglioAce" type="resource" location="siceeorchGetDettaglioAce.xml" />
+
+	<workflow name="siceeorchFindAceMonitoraggio" type="resource" location="siceeorchFindAceMonitoraggio.xml" />
+
+	<workflow name="siceeorchEstraiDocumento" type="resource" location="siceeorchEstraiDocumento.xml" />
+
+	<workflow name="siceeorchFindUidRifIndex" type="resource" location="siceeorchFindUidRifIndex.xml" />
+
+	<workflow name="siceeorchFindImpiantoByCodice" type="resource" location="siceeorchFindImpiantoByCodice.xml" />
+
+	<workflow name="siceeorchFindImpiantoByPOD" type="resource" location="siceeorchFindImpiantoByPOD.xml" />
+
+	<workflow name="siceeorchFindImpiantoByPDR" type="resource" location="siceeorchFindImpiantoByPDR.xml" />
+
+	<workflow name="siceeorchFindLibrettoByUID" type="resource" location="siceeorchFindLibrettoByUID.xml" />
+
+	<workflow name="siceeorchFindProtocollazione" type="resource" location="siceeorchFindProtocollazione.xml" />
+
+	<workflow name="siceeorchGetMdpNewTransazione" type="resource" location="siceeorchGetMdpNewTransazione.xml" />
+
+	<workflow name="siceeorchGetMdpNewUrlWisp" type="resource" location="siceeorchGetMdpNewUrlWisp.xml" />
+
+	<workflow name="siceeorchGetMdpNewSceltaWisp" type="resource" location="siceeorchGetMdpNewSceltaWisp.xml" />
+
+	<workflow name="siceeorchGetMdpNewUrlPagamento" type="resource" location="siceeorchGetMdpNewUrlPagamento.xml" />
+
+	<workflow name="siceeorchGetMdpNewStatoTransazione" type="resource" location="siceeorchGetMdpNewStatoTransazione.xml" />
+
+	<workflow name="siceeorchGetMdpNewIUV" type="resource" location="siceeorchGetMdpNewIUV.xml" />
+
+	<workflow name="siceeorchRestoreDocumento" type="resource" location="siceeorchRestoreDocumento.xml" />
+
+	<workflow name="siceeorchGetStampaCertificatoIText" type="resource" location="siceeorchGetStampaCertificatoIText.xml" />
+
+	<workflow name="siceeorchGetStampaTarghettaCertificatoIText" type="resource" location="siceeorchGetStampaTarghettaCertificatoIText.xml" />
+
+	<workflow name="siceeorchInsertLogAccesso" type="resource" location="siceeorchInsertLogAccesso.xml" />
+
+  
+</workflows>

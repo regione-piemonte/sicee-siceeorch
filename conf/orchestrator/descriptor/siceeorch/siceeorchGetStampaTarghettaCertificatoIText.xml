@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartGetStampaCertificatoReadOnly" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoitext.AAStartGetStampaCertificatoReadOnlyHandler</arg>
+						<arg name="input.binding.0">numCertificatore=SLOT_numCertificatore</arg>
+						<arg name="input.binding.1">progrCertificato=SLOT_progrCertificato</arg>
+						<arg name="input.binding.2">annoCertificato=SLOT_annoCertificato</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetStampaTarghettaCertificato2015" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoitext.PAPDGetStampaTarghettaCertificato2015Handler</arg>	 	
+						<arg name="selectorPD">selector_siceesrv_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_siceesrv.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="102">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.csi.sicee.siceesrv.exception.siceesrv.SiceesrvException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopGetStampaCertificatoReadOnly" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoitext.ZZStopGetStampaCertificatoReadOnlyHandler</arg>
+						<arg name="output.binding">SLOT_arrayPdf</arg>
+						
+						<arg name="exception.mapping.from.0">it.csi.sicee.siceesrv.exception.siceesrv.SiceesrvException</arg>
+						<arg name="exception.mapping.to.0">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.0">Errore</arg>
+						<arg name="exception.mapping.from.1">it.doqui.index.ecmengine.exception.InvalidParameterException</arg>
+						<arg name="exception.mapping.to.1">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.1">Errore</arg>
+						<arg name="exception.mapping.from.2">it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException</arg>
+						<arg name="exception.mapping.to.2">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.2">Errore</arg>
+						<arg name="exception.mapping.from.3">it.doqui.index.ecmengine.exception.publishing.engine.management.ReadException</arg>
+						<arg name="exception.mapping.to.3">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.3">Errore</arg>
+						<arg name="exception.mapping.from.4">it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException</arg>
+						<arg name="exception.mapping.to.4">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.4">Errore</arg>
+						<arg name="exception.mapping.from.5">it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException</arg>
+						<arg name="exception.mapping.to.5">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.5">Errore</arg>
+						<arg name="exception.mapping.from.6">it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg>
+						<arg name="exception.mapping.to.6">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.6">Errore</arg>
+						<arg name="exception.mapping.from.7">java.rmi.RemoteException</arg>
+						<arg name="exception.mapping.to.7">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.7">Errore</arg>
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

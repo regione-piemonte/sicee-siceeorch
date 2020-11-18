@@ -1,0 +1,41 @@
+<porta-delegata name="siceeorch.verificamarcafirma">
+  <services>
+  
+<service name="verificamarcafirma" public-interface-class="it.doqui.dosign.dosign.interfacecsi.dosign.DosignInterface" top-version="2.0.0">
+      <operations>
+		<operation name="verifySignAndCert" type="synch-call" since="1.0.0">
+          <param-list>
+			<param name="signedBuffer" type="it.doqui.dosign.dosign.dto.signature.SignedBuffer" />
+			<param name="params" type="it.doqui.dosign.dosign.dto.parameter.VerifyParameter" />
+          </param-list>
+          	<ret-val type="it.doqui.dosign.dosign.dto.signature.VerifySignAndCertReport"/>
+        </operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="siceeorch.verificamarcafirma.ejb"
+        class="it.csi.csi.porte.ejb20.PortaDelegataEJB"
+        url-pa="dosign/ejb/DosignPA"
+        url-qm="dosign.ejb.ApplVerificaMarcaFirmaQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="@doqui.dosign.verificamarcafirma.pa.url@"/>
+          <!-- initial context factory per JBoss43 -->
+          <property name="java.naming.factory.initial" value="org.jnp.interfaces.NamingContextFactory" />
+          <property name="jnp.disableDiscovery" value="true" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>

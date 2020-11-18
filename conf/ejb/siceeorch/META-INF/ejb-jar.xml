@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
+<ejb-jar>
+
+	<enterprise-beans>
+	    <!-- 
+			===================================================================
+			Implementazione del servizio
+			===================================================================
+		-->
+		<session>
+			<ejb-name>SiceeorchBean</ejb-name>
+			<!--<home>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchHome</home>
+			<remote>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchRemote</remote>-->
+			<local-home>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchLocalHome</local-home>
+			<local>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchLocal</local>
+			<ejb-class>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Container</transaction-type>				
+		</session>				
+		
+		<!-- 
+			===================================================================
+			Porta applicativa del servizio
+			===================================================================
+		-->
+		<session>
+			<ejb-name>SiceeorchPA</ejb-name>
+			<home>it.csi.csi.porte.ejb20.PortaApplicativaHome</home>
+			<remote>it.csi.csi.porte.ejb20.PortaApplicativaEJB</remote>
+			<ejb-class>
+				it.csi.csi.porte.ejb20.PortaApplicativaBean
+			</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Container</transaction-type>
+			<env-entry>
+				<env-entry-name>defpa</env-entry-name>
+				<env-entry-type>java.lang.String</env-entry-type>
+				<env-entry-value>/defpa_siceeorch.xml</env-entry-value>
+			</env-entry>
+			<ejb-local-ref>
+				<description>reference all bean che implementa il servizio</description>
+				<ejb-ref-name>SiceeorchBean</ejb-ref-name>
+				<ejb-ref-type>Session</ejb-ref-type>
+				<local-home>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchLocalHome</local-home>
+				<local>it.csi.sicee.siceeorch.business.siceeorch.SiceeorchLocal</local>
+				<ejb-link>SiceeorchBean</ejb-link>
+			</ejb-local-ref>
+		</session>
+		
+		
+		
+	</enterprise-beans>
+	
+	<assembly-descriptor>
+		<!-- ruoli di sicurezza -->
+		
+		
+		<!-- transazioni -->
+		
+			
+		<container-transaction>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>testResources</method-name>
+			</method>
+		
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>selfCheck</method-name>
+			</method>
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>hasSelfCheck</method-name>
+			</method>
+		
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>elencoRegioni</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>elencoProvince</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>elencoComuni</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getDescrizioneRegione</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getDescrizioneComune</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getDescrizioneProvincia</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getVieByCodiceIstat</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getViaById</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>inserisciAllegato</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>inserisciDocumento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>cancellaDocumento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>ricercaDocumento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>creaAlberatura</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findElencoCertificatori</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findAce</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findCertificatore</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>elencoTitoli</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findNotaio</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>updateInvioLog</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getParametro</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>verificaDocumento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMimeTypeInfo</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>isProductEnabled</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>isServiceEnabled</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>isUserEnabled</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findAceSostitutivi</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getStampaCertificato</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getStampaRicevutaInvioAce</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>verificaDocumentoNewDosign</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>startMdpTransaction</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpPaymentMode</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpTransactionState</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findAceFiltro</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findAceFiltroCount</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findAceFlgPregresso</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getDettaglioAce</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findAceMonitoraggio</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>estraiDocumento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findUidRifIndex</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findImpiantoByCodice</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findImpiantoByPOD</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findImpiantoByPDR</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findLibrettoByUID</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>findProtocollazione</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpNewTransazione</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpNewUrlWisp</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpNewSceltaWisp</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpNewUrlPagamento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpNewStatoTransazione</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getMdpNewIUV</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>restoreDocumento</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getStampaCertificatoIText</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>getStampaTarghettaCertificatoIText</method-name>
+			</method>
+		
+			<method>
+				<ejb-name>SiceeorchBean</ejb-name>
+				<method-name>insertLogAccesso</method-name>
+			</method>
+		
+		<trans-attribute>NotSupported</trans-attribute>
+		</container-transaction>
+						
+		
+				
+		
+						
+		
+		
+		<container-transaction>
+			<method>
+				<ejb-name>SiceeorchPA</ejb-name>
+				<method-name>*</method-name>
+			</method>
+			<trans-attribute>NotSupported</trans-attribute>
+		</container-transaction>
+	</assembly-descriptor>
+	
+</ejb-jar>

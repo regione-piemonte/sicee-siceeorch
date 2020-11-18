@@ -1,0 +1,509 @@
+<porta-delegata name="siceeorch.ctservtopon">
+  <services>
+  
+<service name="ctservtopon" public-interface-class="it.csi.ctserv.interfaceCSI.toponomastica.ToponomasticaInterface" top-version="2.3">
+      <operations>
+		<operation name="cercaCivici" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="cercaCiviciDiUnaVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p4" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="cercaCiviciDiUnaVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="cercaCiviciDiUnaVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p4" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="cercaCiviciDiUnaVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p4" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="cercaCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="cercaCivicoDaVecchiaChiave" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="cercaCivicoDaVecchiaChiave" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="cercaIdCivicoDaVecchiaChiave" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.Integer"/>
+        </operation>
+		<operation name="cercaIdCivicoDaVecchiaChiave" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.Integer"/>
+        </operation>
+		<operation name="cercaCivicoConAzzonamenti" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="cercaElencoIdVie" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.Integer[]"/>
+        </operation>
+		<operation name="cercaElencoVie" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaElencoVie" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaElencoVie" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Boolean" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaCiviciInUnAzzonamento" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.ctserv.dto.azzonamenti.Sezione" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="cercaVieConCiviciInUnAzzonamento" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.ctserv.dto.azzonamenti.Sezione" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaSedime" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Sedime"/>
+        </operation>
+		<operation name="cercaSedimi" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Sedime[]"/>
+        </operation>
+		<operation name="cercaViaConCiviciPerCodice" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaConCiviciPerDenomCompatta" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaConCiviciPerId" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaConCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaPerCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaPerCodice" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaPerDenomCompatta" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViaPerId" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaViePerCodice" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String[]" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaViePerDenCompatta" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String[]" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaViePerDescrizione" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.String" />
+			<param name="p3" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaViePerId" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaViePerSedime" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaVieConCivicoDaUiuId" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamVia" />
+			<param name="p2" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaCiviciDaUiuId" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.ParamCiv" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+		<operation name="getAllRelatedDataVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.Dettaglio[]"/>
+        </operation>
+		<operation name="cercaCivicoAttuale" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="cercaCivicoLight" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.CivicoLight"/>
+        </operation>
+		<operation name="cercaCivicoLight" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.CivicoLight"/>
+        </operation>
+		<operation name="cercaCivicoDaIndirizzo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="normalizzaIndirizzo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via"/>
+        </operation>
+		<operation name="cercaVieConCivici" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaCivicoAllaData" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.util.Date" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico"/>
+        </operation>
+		<operation name="decodificaCiviciGeo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.CivicoGeo[]"/>
+        </operation>
+		<operation name="cercaStoricoVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.VariazioneVia[]"/>
+        </operation>
+		<operation name="cercaStoricoVariazioniCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.VariazioneCivico[]"/>
+        </operation>
+		<operation name="cercaStoricoSostituzioniCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.StoricoCivico[]"/>
+        </operation>
+		<operation name="cercaMovimentazioneVie" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.util.Date" />
+			<param name="p1" type="java.util.Date" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.VariazioneVia[]"/>
+        </operation>
+		<operation name="cercaMovimentazioneCivici" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.util.Date" />
+			<param name="p1" type="java.util.Date" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.VariazioneCivico[]"/>
+        </operation>
+		<operation name="cercaVieInUnAzzonamento" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.ctserv.dto.azzonamenti.Sezione" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Via[]"/>
+        </operation>
+		<operation name="cercaSingoloAzzonamentoPerIdVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.Dettaglio[]"/>
+        </operation>
+		<operation name="cercaAzzonamentiPerIdVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.azzonamenti.ElencoZoneDellaCitta"/>
+        </operation>
+		<operation name="cercaSingoloAzzonamentoPerIdCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.Dettaglio"/>
+        </operation>
+		<operation name="cercaIndirizzoRidotto" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.String"/>
+        </operation>
+		<operation name="cercaIndirizzoRidotto" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.String"/>
+        </operation>
+		<operation name="cercaIndirizzoRidottoConConvenzionale" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="it.csi.ctserv.dto.KeyOldCivico" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.IndirizzoRidotto"/>
+        </operation>
+		<operation name="cercaIndirizzoRidottoConConvenzionale" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.IndirizzoRidotto"/>
+        </operation>
+		<operation name="ordinaCiviciPerDenominazioneVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.Integer[]"/>
+        </operation>
+		<operation name="cercaIdCiviciVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.ctserv.dto.ParamCivVia" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.RadiceCivici[]"/>
+        </operation>
+		<operation name="cercaCiviciPerRange" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.ctserv.dto.ParamCivRange" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="it.csi.ctserv.dto.toponomastica.Civico[]"/>
+        </operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="siceeorch.ctservtopon.ejb"
+        class="it.csi.csi.porte.ejb20.PortaDelegataEJB"
+        url-pa="PA_CTSERV_Topon"
+        url-qm="ctserv.ejb.ApplCtservToponQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="@ctserv.ctserv.ctservtopon.pa.url@"/>
+          <!-- initial contxt factory per WLS92 -->
+          <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>

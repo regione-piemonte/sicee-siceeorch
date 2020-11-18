@@ -1,0 +1,433 @@
+<porta-delegata name="siceeorch.topelmamm">
+  <services>
+  
+<service name="topelmamm" public-interface-class="it.csi.sitad.lmam.interf.LimitiAmministrativiInterface" top-version="2.3">
+      <operations>
+		<operation name="cercaComuneBdaeById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae"/>
+        </operation>
+		<operation name="cercaComuniBdaeByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeByIdParco" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeByIdBiotopo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeByIdZPS" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeByIdComunitaMontana" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniBdaeByIdComunitaCollinare" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.ComuneBdae[]"/>
+        </operation>
+		<operation name="cercaComuniById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuneById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune"/>
+        </operation>
+		<operation name="cercaComuneByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune"/>
+        </operation>
+		<operation name="elencoComuniWithStradario" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="isComuneInStradario" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="java.lang.Boolean"/>
+        </operation>
+		<operation name="cercaComuniByStato" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.String" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIdComunitaMontana" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIdZPS" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIdParco" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIdBiotopo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIdComunitaCollinare" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaLocalitaByIds" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita"/>
+        </operation>
+		<operation name="cercaProvinceById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia[]"/>
+        </operation>
+		<operation name="cercaProvinciaById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia"/>
+        </operation>
+		<operation name="cercaProvinceByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia[]"/>
+        </operation>
+		<operation name="cercaProvinciaByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia"/>
+        </operation>
+		<operation name="cercaRegioniById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Regione[]"/>
+        </operation>
+		<operation name="cercaRegioneById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Regione"/>
+        </operation>
+		<operation name="cercaRegioniByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Regione[]"/>
+        </operation>
+		<operation name="cercaRegioneByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Regione"/>
+        </operation>
+		<operation name="verificaLocalita" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+          </param-list>
+          	<ret-val type="java.lang.Boolean[]"/>
+        </operation>
+		<operation name="cercaComuniByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Boolean" />
+			<param name="p4" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Boolean" />
+			<param name="p4" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaLocalitaByIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.String[]" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Boolean" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Boolean" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaLocalitaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Boolean" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Localita[]"/>
+        </operation>
+		<operation name="cercaProvinceByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia[]"/>
+        </operation>
+		<operation name="cercaProvinceByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia[]"/>
+        </operation>
+		<operation name="cercaProvinceByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Boolean" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia[]"/>
+        </operation>
+		<operation name="cercaProvinceByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Boolean" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Provincia[]"/>
+        </operation>
+		<operation name="cercaRegioniByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Regione[]"/>
+        </operation>
+		<operation name="cercaRegioniByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Regione[]"/>
+        </operation>
+		<operation name="cercaComuniByIdAggregazione" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+		<operation name="cercaComuniByIdAggregazioni" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.lmam.entity.Comune[]"/>
+        </operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="siceeorch.topelmamm.ejb"
+        class="it.csi.csi.porte.ejb.PortaDelegataEJB"
+        url-pa="PA_Amm"
+        url-qm="tope.ejb.ApplTopeLmammQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="@tope.tope.topelmamm.pa.url@"/>
+          <!-- initial contxt factory per WLS92 -->
+          <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartGetMimeTypeInfo" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getmimetypeinfo.AAStartGetMimeTypeInfoHandler</arg>
+						<arg name="input.binding.0">documento=SLOT_doc</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreateOperationContext" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getmimetypeinfo.CTXCreateOperationContextHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_operationContext</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.OperationContext</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreateFileInfo" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getmimetypeinfo.CTXCreateFileInfoHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_doc</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceeorch.dto.siceeorch.Documento</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_fileInfo</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.management.FileInfo</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="103">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetFileFormatInfo" id="103">
+		<actions>
+			<action name="next" id="1103">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getmimetypeinfo.PAPDGetFileFormatInfoHandler</arg>	 	
+						<arg name="selectorPD">selector_index_mngmt_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexmngmt.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="105">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,java.rmi.RemoteException,it.doqui.index.ecmengine.exception.EcmEngineException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="104">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreateResult" id="104">
+		<actions>
+			<action name="next" id="1104">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getmimetypeinfo.CTXCreateResultHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_fileFormatInfo</arg>
+						<arg name="input.slot.class.0">it.doqui.index.ecmengine.dto.engine.management.FileFormatInfo[]</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_result</arg>
+						<arg name="output.slot.class">it.csi.sicee.siceeorch.dto.siceeorch.MimeTypeInfo</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="105">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopGetMimeTypeInfo" id="105">
+		<actions>
+			<action name="next" id="1105">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getmimetypeinfo.ZZStopGetMimeTypeInfoHandler</arg>
+						<arg name="output.binding">SLOT_result</arg>
+						
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

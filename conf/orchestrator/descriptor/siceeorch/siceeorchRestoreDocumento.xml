@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartRestoreDocumento" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.restoredocumento.AAStartRestoreDocumentoHandler</arg>
+						<arg name="input.binding.0">documento=SLOT_docRic</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertDocumentoToNode" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.restoredocumento.CTXConvertDocumentoToNodeHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_docRic</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceeorch.dto.siceeorch.Documento</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_nodeRic</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.Node</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertDocumentoOperationContext" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.restoredocumento.CTXConvertDocumentoOperationContextHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_docRic</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceeorch.dto.siceeorch.Documento</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_operationContextRic</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.OperationContext</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="103">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetRestoreContent" id="103">
+		<actions>
+			<action name="next" id="1103">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.restoredocumento.PAPDGetRestoreContentHandler</arg>	 	
+						<arg name="selectorPD">selector_index_mngmt_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexmngmt.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="105">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException,it.doqui.index.ecmengine.exception.publishing.engine.management.ReadException,java.rmi.RemoteException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="104">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="RestoreDocumentoResult" id="104">
+		<actions>
+			<action name="next" id="1104">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.restoredocumento.CTXRestoreDocumentoResultHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_nodeRic</arg>
+						<arg name="input.slot.class.0">it.doqui.index.ecmengine.dto.Node</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_uid</arg>
+						<arg name="output.slot.class">java.lang.String</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="105">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopRestoreDocumento" id="105">
+		<actions>
+			<action name="next" id="1105">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.restoredocumento.ZZStopRestoreDocumentoHandler</arg>
+						<arg name="output.binding">SLOT_uid</arg>
+						
+						<arg name="exception.mapping.from.0">it.doqui.index.ecmengine.exception.InvalidParameterException</arg>
+						<arg name="exception.mapping.to.0">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.0">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.1">it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException</arg>
+						<arg name="exception.mapping.to.1">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.1">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.2">it.doqui.index.ecmengine.exception.publishing.engine.management.ReadException</arg>
+						<arg name="exception.mapping.to.2">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.2">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.3">it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException</arg>
+						<arg name="exception.mapping.to.3">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.3">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.4">it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException</arg>
+						<arg name="exception.mapping.to.4">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.4">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.5">it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg>
+						<arg name="exception.mapping.to.5">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.5">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.6">java.rmi.RemoteException</arg>
+						<arg name="exception.mapping.to.6">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.6">Il documento non e' stato inserito</arg>
+						<arg name="exception.mapping.from.7">it.doqui.index.ecmengine.exception.InvalidParameterException</arg>
+						<arg name="exception.mapping.to.7">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.7">Il documento non e' stato inserito</arg>
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

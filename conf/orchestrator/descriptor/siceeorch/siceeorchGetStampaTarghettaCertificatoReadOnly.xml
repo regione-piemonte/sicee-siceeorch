@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    SPDX-License-Identifier: EUPL-1.2
+    Copyright Regione Piemonte - 2020
+ -->
+
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartGetStampaCertificatoReadOnly" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.AAStartGetStampaCertificatoReadOnlyHandler</arg>
+						<arg name="input.binding.0">numCertificatore=SLOT_numCertificatore</arg>
+						<arg name="input.binding.1">progrCertificato=SLOT_progrCertificato</arg>
+						<arg name="input.binding.2">annoCertificato=SLOT_annoCertificato</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetXmlStampaTarghettaCertificato2015" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.PAPDGetXmlStampaTarghettaCertificato2015Handler</arg>	 	
+						<arg name="selectorPD">selector_siceesrv_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_siceesrv.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="112">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.csi.sicee.siceesrv.exception.siceesrv.SiceesrvException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreateApplicazione" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXCreateApplicazioneHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_applicazione</arg>
+						<arg name="output.slot.class">it.csi.modol.modolsrv.dto.Applicazione</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="103">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertXmlCertToXmlModel" id="103">
+		<actions>
+			<action name="next" id="1103">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXConvertXmlCertToXmlModelHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_arrayXmlDoc</arg>
+						<arg name="input.slot.class.0">byte[]</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_xmlModel</arg>
+						<arg name="output.slot.class">it.csi.modol.modolsrv.dto.XmlModel</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="104">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreateFiltroRicModel" id="104">
+		<actions>
+			<action name="next" id="1104">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXCreateFiltroRicModelHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_filtroRicModulo</arg>
+						<arg name="output.slot.class">it.csi.modol.modolsrv.dto.criteri.CriterioRicercaModulo</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="105">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="RicercaModulo" id="105">
+		<actions>
+			<action name="next" id="1105">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.PAPDRicercaModuloHandler</arg>	 	
+						<arg name="selectorPD">selector_modolsrv_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_modolsrv.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="106">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertArrayModuloToModulo" id="106">
+		<actions>
+			<action name="next" id="1106">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXConvertArrayModuloToModuloHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_arrayModulo</arg>
+						<arg name="input.slot.class.0">it.csi.modol.modolsrv.dto.Modulo[]</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_modulo</arg>
+						<arg name="output.slot.class">it.csi.modol.modolsrv.dto.Modulo</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="107">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="MargeModulo" id="107">
+		<actions>
+			<action name="next" id="1107">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.PAPDMargeModuloHandler</arg>	 	
+						<arg name="selectorPD">selector_modolsrv_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_modolsrv.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="108">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertModuloToArrayByte" id="108">
+		<actions>
+			<action name="next" id="1108">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXConvertModuloToArrayByteHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_modulo</arg>
+						<arg name="input.slot.class.0">it.csi.modol.modolsrv.dto.Modulo</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_arrayPdf</arg>
+						<arg name="output.slot.class">byte[]</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="109">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreatePdfAInputRequest" id="109">
+		<actions>
+			<action name="next" id="1109">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXCreatePdfAInputRequestHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_arrayPdf</arg>
+						<arg name="input.slot.class.0">byte[]</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_pdfAInputRequest</arg>
+						<arg name="output.slot.class">it.csi.modol.modolpdfgeneratorsrv.dto.pdfa.PdfAInputRequest</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="110">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="CreateApplicazionePdfGen" id="110">
+		<actions>
+			<action name="next" id="1110">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.CTXCreateApplicazionePdfGenHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_applicazionePdfGen</arg>
+						<arg name="output.slot.class">it.csi.modol.modolpdfgeneratorsrv.dto.Applicazione</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="111">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetPdfStatico" id="111">
+		<actions>
+			<action name="next" id="1111">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.PAPDGetPdfStaticoHandler</arg>	 	
+						<arg name="selectorPD">selector_modolpdfgenerator_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_modolpdfgenerator.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="112">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopGetStampaCertificatoReadOnly" id="112">
+		<actions>
+			<action name="next" id="1112">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.getstampatarghettacertificatoreadonly.ZZStopGetStampaCertificatoReadOnlyHandler</arg>
+						<arg name="output.binding">SLOT_arrayPdf</arg>
+						
+						<arg name="exception.mapping.from.0">it.csi.sicee.siceesrv.exception.siceesrv.SiceesrvException</arg>
+						<arg name="exception.mapping.to.0">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.0">Errore</arg>
+						<arg name="exception.mapping.from.1">it.doqui.index.ecmengine.exception.InvalidParameterException</arg>
+						<arg name="exception.mapping.to.1">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.1">Errore</arg>
+						<arg name="exception.mapping.from.2">it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException</arg>
+						<arg name="exception.mapping.to.2">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.2">Errore</arg>
+						<arg name="exception.mapping.from.3">it.doqui.index.ecmengine.exception.publishing.engine.management.ReadException</arg>
+						<arg name="exception.mapping.to.3">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.3">Errore</arg>
+						<arg name="exception.mapping.from.4">it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException</arg>
+						<arg name="exception.mapping.to.4">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.4">Errore</arg>
+						<arg name="exception.mapping.from.5">it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException</arg>
+						<arg name="exception.mapping.to.5">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.5">Errore</arg>
+						<arg name="exception.mapping.from.6">it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg>
+						<arg name="exception.mapping.to.6">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.6">Errore</arg>
+						<arg name="exception.mapping.from.7">java.rmi.RemoteException</arg>
+						<arg name="exception.mapping.to.7">it.csi.sicee.siceeorch.exception.siceeorch.SiceesrvException</arg>
+						<arg name="exception.mapping.msg.7">Errore</arg>
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

@@ -1,0 +1,233 @@
+
+<ivy-module version="1.0">
+
+	<info organisation="csipiemonte" module="siceeorch" />
+
+	<dependencies>
+
+		<!-- librerie per il logging applicativo e la misurazione 
+		     delle performance. Nota: la piattaforma jboss impone l'utilizzo della
+		     versione 1.2.14. 
+		     -->		
+		<dependency org="apache" name="log4j" rev="1.2.14">
+			<artifact name="log4j-1.2.14" type="jar" />
+		</dependency>
+
+		<dependency org="csipiemonte" name="util-perf" rev="1.0.0">
+			<artifact name="util-perf-1.0.0" type="jar" />
+		</dependency>
+
+		<!-- librerie per l'implementazione di monitoraggio e diagnostica -->
+		<dependency org="csipiemonte" name="coop-diag" rev="1.2.1">
+			<artifact name="coop-diag-1.2.1" type="jar" />
+		</dependency>
+		
+		<!-- librerie per la realizzazioen dei test unitari -->
+		<dependency org="others" name="junit" rev="3.8.1">
+			<artifact name="junit-3.8.1" type="jar" />
+		</dependency>
+
+		<!-- librerie Core di C.S.I -->
+		<dependency org="csipiemonte" name="csi" rev="1.4.5">
+			<artifact name="csi-apachesoap-1.4.5" type="jar" />
+			<artifact name="csi-core-1.4.5" type="jar" />
+			<artifact name="csi-ejb-1.4.5" type="jar" />
+			<artifact name="csi-ejb-weblogic-1.4.5" type="jar" />
+			<artifact name="csi-rmi-1.4.5" type="jar" />
+			<artifact name="csi-stadapter-1.4.5" type="jar" />
+			<artifact name="csi-tools-1.4.5" type="jar" />
+		</dependency>
+	    
+	    <!-- librerie necessarie pe ri binding WSFAD -->
+	    <dependency org="csipiemonte" name="wsadp" rev="2.1.0">
+	    	<artifact name="wsadp-2.1.0" type="jar" /> 
+	    </dependency>
+	    
+	    <!-- librerie necessarie se si attiva il supporto coop trace
+	         (specifiche per la target platform JBossEAP6. 
+	    -->
+	    
+	    <dependency org="csipiemonte" name="coop-trace" rev="1.2.0">
+	    	<artifact name="coop-trace-1.2.0" type="jar" />
+	    </dependency>
+	    
+	    <!-- dipendenze per svcflow 1.2.1 -->
+	    <dependency org="csipiemonte" name="svcflow" rev="1.2.1">
+	    	<artifact name="svcflow-1.2.1" type="jar" />
+	    </dependency>
+	    
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [IRIDE2] -->
+		<dependency org="csipiemonte" name="iridev2" rev="2.0.0">
+			<artifact name="iridev2-pep-intf-2.0.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [CTSERV] -->
+		<dependency org="csipiemonte" name="ctserv" rev="2.3.1">
+			<artifact name="ctserv-client-2.3.1" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [TOPELMAMM] -->
+		<dependency org="csipiemonte" name="tope" rev="4.3.0">
+			<artifact name="tope-delegate-4.3.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [TAVT] -->
+		<dependency org="csipiemonte" name="tavt-client" rev="3.1.0">
+			<artifact name="tavt-client-3.1.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [TOPETOPO] -->
+		<dependency org="csipiemonte" name="tope" rev="4.3.0">
+			<artifact name="tope-delegate-4.3.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [INDEX_MNGMT] -->
+		<dependency org="doqui" name="ecmengine-engine-client" rev="6.2.0">
+			<artifact name="ecmengine-engine-client-6.2.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [INDEX_SEARCH] -->
+		<dependency org="doqui" name="ecmengine-engine-client" rev="6.2.0">
+			<artifact name="ecmengine-engine-client-6.2.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [SICEESRV] -->
+		<dependency org="csipiemonte" name="siceesrv" rev="1.12.0">
+			<artifact name="siceesrv-siceesrv-client-1.12.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [INDEX_SECURITY] -->
+		<dependency org="doqui" name="ecmengine-engine-client" rev="6.2.0">
+			<artifact name="ecmengine-engine-client-6.2.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [VERIFICA_MARCA_FIRMA] -->
+		<dependency org="doqui" name="dosign" rev="2.0.0">
+			<artifact name="dosign-client-2.0.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [MDPNEW_CORE] -->
+		<dependency org="csipiemonte" name="mdpnew-client" rev="4.0.0">
+			<artifact name="mdpcoreinterfaces-4.0.0" type="jar" />
+		</dependency>
+	    
+
+	    
+		<!-- dipendenze necessarie per il PDPAServiceConnector [SIGITEXT] -->
+		<dependency org="csipiemonte" name="sigitext-wsclient-axis" rev="2.0.0">
+			<artifact name="sigitext-wsclient-axis-2.0.0" type="jar" />
+		</dependency>
+	    
+
+	    
+	    
+	    
+        <!-- librerie specifiche della target platform JBoss43 -->
+		<dependency org="others" name="jboss" rev="4.3.0">
+			<artifact name="jboss-j2ee-4.3.0" type="jar" />
+			<artifact name="jboss-servlet-api-4.3.0" type="jar" /> 
+		</dependency>
+		
+		<!-- librerie necessarie per la connessione a servizi su WLS92 -->
+		<dependency org="csipiemonte" name="weblogic-client" rev="3.0.0">
+			<artifact name="weblogic-client-3.0.0" type="jar" /> 
+		</dependency>
+		
+	    
+		<dependency org="csipiemonte" name="axiscsi" rev="1.0.0">
+			<artifact name="axis-1.4.csi-1.0.0" type="jar" />
+		</dependency>
+		
+		<dependency org="apache" name="axis-ant" rev="1.4">
+			<artifact name="axis-ant-1.4" type="jar" />
+		</dependency>
+	    
+	    <!--PROTECTED REGION ID(R2020149401) ENABLED START-->
+	    <!-- inserire QUI le direttive di download di eventuali librerie extra 
+	         ricordarsi di referenziare i jar nel file build.properties nella
+	         variabile extra.app.libs
+	    -->
+	    
+	    <!-- dipendenze necessarie per il PDPAServiceConnector [MDPIUV] -->
+		<dependency org="csipiemonte" name="mdpnew-client" rev="2.0.0">
+			<artifact name="mdpiuvsrv-mdpiuv-client-1.0.0" type="jar" />
+		</dependency>
+
+
+		<dependency org="doqui" name="ecmengine-common" rev="6.2.0">
+			<artifact name="ecmengine-common-6.2.0" type="jar" />
+		</dependency>
+	
+		<dependency org="doqui" name="dosign" rev="2.0.0">
+			<artifact name="dosign-client-2.0.0" type="jar" />
+			<artifact name="dosign-common-2.0.0" type="jar" />
+		</dependency>
+			
+			
+			 
+			
+	    <dependency org="others" name="jboss" rev="4.3.0">
+			<artifact name="jbossall-client-4.3.0" type="jar" />
+		</dependency>
+		
+		<!--dependency org="sun" name="jaxb" rev="2.1.12">
+			<artifact name="jaxb-api-2.1.12" type="jar"/>
+			<artifact name="jaxb-impl-2.1.12" type="jar"/>
+			<artifact name="jaxb-xjc-2.1.12" type="jar"/>
+			<artifact name="jaxb1-impl-2.1.12" type="jar"/>
+		</dependency-->
+		
+		<!-- CXF -->
+
+		<!-- Inserire qui le dipendenze aggiuntive -->
+		<!-- BASE CXF DEPENDENCIES -->
+
+		<dependency org="apache" name="cxf" rev="2.4.6"  />
+		
+		<dependency org="apache" name="geronimo-annotation" rev="1.0" />
+		<dependency org="apache" name="geronimo-ws" rev="2.0" />
+		<dependency org="apache" name="geronimo-jaxws" rev="2.1" />
+
+		<dependency org="sun" name="jaxb" rev="2.1.13">
+			<artifact name="jaxb-api-2.1.13" type="jar" />
+			<artifact name="jaxb-impl-2.1.13" type="jar" />
+		</dependency>
+
+		<dependency org="others" name="wsdl4j" rev="1.6.2" />
+		<dependency org="apache" name="xmlschema-core" rev="2.1.0" />
+		
+		<dependency org="others" name="neethi" rev="3.0.2" />
+		
+		<dependency org="sun" name="saaj" rev="1.2">
+			<artifact name="saaj-1.2" type="jar" />
+		</dependency>
+		
+		<conflict org="csipiemonte" module="mdpnew-client" manager="all" />
+
+		<!-- FINE CXF -->
+		
+	    <!--PROTECTED REGION END-->
+	</dependencies>
+
+</ivy-module>

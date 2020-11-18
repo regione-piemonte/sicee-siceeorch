@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartCreaAlberatura" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.AAStartCreaAlberaturaHandler</arg>
+						<arg name="input.binding.0">idCertificatore=SLOT_idCertificatore</arg>
+						<arg name="input.binding.1">anno=SLOT_anno</arg>
+						<arg name="input.binding.2">progressivoInit=SLOT_init</arg>
+						<arg name="input.binding.3">progressivoEnd=SLOT_end</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToOperationContext" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToOperationContextHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_operationContextIns</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.OperationContext</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToSearchParamsFolder" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToSearchParamsFolderHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_searchParamsIns</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.search.SearchParams</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="103">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetUidParentFolderRoot" id="103">
+		<actions>
+			<action name="next" id="1103">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.PAPDGetUidParentFolderRootHandler</arg>	 	
+						<arg name="selectorPD">selector_index_search_ajbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexsearch.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="117">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.NoDataExtractedException,it.doqui.index.ecmengine.exception.publishing.engine.search.SearchException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,java.rmi.RemoteException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="104">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToContentFolderLevel1" id="104">
+		<actions>
+			<action name="next" id="1104">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToContentFolderLevel1Handler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_idCertificatore</arg>
+						<arg name="input.slot.class.0">java.lang.String</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_contentFolderLevel1</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.management.Content</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="105">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="NodeContentParentFolderLevel1" id="105">
+		<actions>
+			<action name="next" id="1105">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.PAPDNodeContentParentFolderLevel1Handler</arg>	 	
+						<arg name="selectorPD">selector_index_mngmt_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexmngmt.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="106">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.engine.management.InsertException,it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException,java.rmi.RemoteException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="108">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToSearchParamsFolderLevel1" id="106">
+		<actions>
+			<action name="next" id="1106">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToSearchParamsFolderLevel1Handler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_idCertificatore</arg>
+						<arg name="input.slot.class.0">java.lang.String</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_searchParamsIns</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.search.SearchParams</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="107">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetUidParentFolderLevel1" id="107">
+		<actions>
+			<action name="next" id="1107">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.PAPDGetUidParentFolderLevel1Handler</arg>	 	
+						<arg name="selectorPD">selector_index_search_ajbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexsearch.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="117">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.NoDataExtractedException,it.doqui.index.ecmengine.exception.publishing.engine.search.SearchException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,java.rmi.RemoteException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="108">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToContentFolderLevel2" id="108">
+		<actions>
+			<action name="next" id="1108">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToContentFolderLevel2Handler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_anno</arg>
+						<arg name="input.slot.class.0">java.lang.String</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_contentFolderLevel2</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.management.Content</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="109">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="NodeContentParentFolderLevel2" id="109">
+		<actions>
+			<action name="next" id="1109">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.PAPDNodeContentParentFolderLevel2Handler</arg>	 	
+						<arg name="selectorPD">selector_index_mngmt_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexmngmt.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="110">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.engine.management.InsertException,it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException,java.rmi.RemoteException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="112">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToSearchParamsFolderLevel2" id="110">
+		<actions>
+			<action name="next" id="1110">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToSearchParamsFolderLevel2Handler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_anno</arg>
+						<arg name="input.slot.class.0">java.lang.String</arg>
+						<arg name="input.slot.name.1">SLOT_idCertificatore</arg>
+						<arg name="input.slot.class.1">java.lang.String</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_searchParamsIns</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.search.SearchParams</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="111">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="GetUidParentFolderLevel2" id="111">
+		<actions>
+			<action name="next" id="1111">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.PAPDGetUidParentFolderLevel2Handler</arg>	 	
+						<arg name="selectorPD">selector_index_search_ajbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexsearch.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="117">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.NoDataExtractedException,it.doqui.index.ecmengine.exception.publishing.engine.search.SearchException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,java.rmi.RemoteException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="112">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertIntoArray" id="112">
+		<actions>
+			<action name="next" id="1112">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertIntoArrayHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_init</arg>
+						<arg name="input.slot.class.0">java.lang.Integer</arg>
+						<arg name="input.slot.name.1">SLOT_end</arg>
+						<arg name="input.slot.class.1">java.lang.Integer</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_codici</arg>
+						<arg name="output.slot.class">java.lang.String[]</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="113">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ForEach" id="113">
+		<actions>
+			<action name="next" id="1113">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.LOOPForEachHandler</arg>	
+						<arg name="collection.slot.name">SLOT_codici</arg>
+						<arg name="item.slot.name">SLOT_progressivo</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="114">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ForEachCondition</arg>
+  								<arg name="collection.slot.name">SLOT_codici</arg>
+  								<arg name="for.each.branch">stay</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<result old-status="Queued"
+						status="Finished" step="117">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ForEachCondition</arg>
+  								<arg name="collection.slot.name">SLOT_codici</arg>
+  								<arg name="for.each.branch">exit</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="117">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertCodiceToContentFolderLevel3" id="114">
+		<actions>
+			<action name="next" id="1114">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.CTXConvertCodiceToContentFolderLevel3Handler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_progressivo</arg>
+						<arg name="input.slot.class.0">java.lang.String</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_contentFolderLevel3</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.engine.management.Content</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="115">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="NodeContentParentFolderLevel3" id="115">
+		<actions>
+			<action name="next" id="1115">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.PAPDNodeContentParentFolderLevel3Handler</arg>	 	
+						<arg name="selectorPD">selector_index_mngmt_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexmngmt.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="116">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.engine.management.InsertException,it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException,it.doqui.index.ecmengine.exception.publishing.InvalidCredentialsException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,it.doqui.index.ecmengine.exception.publishing.EcmEngineTransactionException,java.rmi.RemoteException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="116">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="EndLoop" id="116">
+		<actions>
+			<action name="next" id="1116">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.NXTEndLoopHandler
+						</arg>	
+						<!--  	
+						<arg name="selectorPD">gestionecittadini.properties</arg>
+								
+						<arg name="servicePD">defpd_gestionecittadini</arg>
+					    <arg name="handleException">CittadinoNonTrovatoException</arg>
+					    -->
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="113">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopCreaAlberatura" id="117">
+		<actions>
+			<action name="next" id="1117">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.creaalberatura.ZZStopCreaAlberaturaHandler</arg>
+						
+						<arg name="exception.mapping.from.0">it.doqui.index.ecmengine.exception.publishing.engine.management.InsertException</arg>
+						<arg name="exception.mapping.to.0">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.0">Il documento non e' stato inserito</arg>
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

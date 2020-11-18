@@ -1,0 +1,190 @@
+<porta-delegata name="siceeorch.sigitext">
+  <services>
+  
+<service name="sigitext" public-interface-class="it.csi.sigit.sigitext.interfacecsi.sigitext.SigitextSrv" top-version="1.0.0">
+      <operations>
+		<operation name="getCombustibile" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getDestinazione" type="synch-call" since="">
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getEvacuazione" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getFluido" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getLocaleInstall" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getLuogo" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getMarcaApparecc" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getMarcaEnerg" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getPotenzaImp" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getStatoImp" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getStatoRapp" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTipo" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTipoApparecc" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTipoBruciatore" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTipoInstall" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTiraggio" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTitoloResp" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getTipologiaImp" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getCombustibileCIT" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getFluidoCIT" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getMarcaCIT" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getUnitaMisuraCIT" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.CodiceDescrizione[]"/>
+        </operation>
+		<operation name="getImpiantoByCodice" type="synch-call" >
+          <param-list>
+			<param name="codiceImpianto" type="java.lang.String" />
+			<param name="utente" type="it.csi.sigit.sigitext.dto.sigitext.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.Impianto[]"/>
+        </operation>
+		<operation name="getImpiantoByPOD" type="synch-call" >
+          <param-list>
+			<param name="pod" type="java.lang.String" />
+			<param name="utente" type="it.csi.sigit.sigitext.dto.sigitext.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.Impianto[]"/>
+        </operation>
+		<operation name="getImpiantoByPDR" type="synch-call" >
+          <param-list>
+			<param name="pdr" type="java.lang.String" />
+			<param name="utente" type="it.csi.sigit.sigitext.dto.sigitext.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.sigit.sigitext.dto.sigitext.Impianto[]"/>
+        </operation>
+		<operation name="getLibrettoByUID" type="synch-call" >
+          <param-list>
+			<param name="uid" type="java.lang.String" />
+			<param name="utente" type="it.csi.sigit.sigitext.dto.sigitext.Utente" />
+          </param-list>
+          	<ret-val type="byte[]"/>
+        </operation>
+        <!-- operazione per monitoraggio -->
+      	<operation name="testResources" type="synch-call">
+          <param-list>
+          </param-list>
+          <ret-val type="boolean"/>
+        </operation>
+        <!-- operazioni per diagnostica -->
+      	<operation name="selfCheck" type="synch-call">
+          <param-list>
+          	<param name="alreadyCalled" type="it.csi.coopdiag.api.CalledResource[]"/>
+          </param-list>
+          <ret-val type="it.csi.coopdiag.api.InvocationNode"/>
+      	</operation>
+      	<operation name="hasSelfCheck" type="synch-call">
+          <param-list>
+          </param-list>
+          <ret-val type="boolean"/>
+      	</operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="sigitext"
+        class="it.csi.csi.porte.ejb20.PortaDelegataEJB"
+        url-pa="sigitext.ejb.ApplSigitextPA"
+        url-qm="sigitext.ejb.ApplSigitextQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="jnp://tst-jboss11.csi.it:32416"/>
+          <!-- initial context factory per JBoss43 -->
+          <property name="java.naming.factory.initial" value="org.jnp.interfaces.NamingContextFactory" />
+          <property name="jnp.disableDiscovery" value="true" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>

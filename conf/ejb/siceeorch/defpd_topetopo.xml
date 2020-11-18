@@ -1,0 +1,412 @@
+<porta-delegata name="siceeorch.topetopo">
+  <services>
+  
+<service name="topetopo" public-interface-class="it.csi.sitad.tpnm.interf.ToponomasticaInterface" top-version="2.3">
+      <operations>
+		<operation name="cercaVieById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaViaById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="int" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via"/>
+        </operation>
+		<operation name="cercaVieByCodstrada" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="checkStatoVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="java.lang.String"/>
+        </operation>
+		<operation name="esisteVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="java.lang.Boolean"/>
+        </operation>
+		<operation name="checkId_l2Canc" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+          </param-list>
+          	<ret-val type="java.lang.Integer[]"/>
+        </operation>
+		<operation name="cercaNomeViaById_l2" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.NomeVia"/>
+        </operation>
+		<operation name="cercaTipoViaById_l2" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.TipoVia"/>
+        </operation>
+		<operation name="cercaTipoViaByIdTipoVia" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.TipoVia"/>
+        </operation>
+		<operation name="cercaAsteDiViaByObjectid" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.AstaDiVia[]"/>
+        </operation>
+		<operation name="cercaAsteDiViaById_l2" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.AstaDiVia[]"/>
+        </operation>
+		<operation name="cercaAsteDiViaByIdComune" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.AstaDiVia[]"/>
+        </operation>
+		<operation name="cercaAsteDiViaByCoppiaId" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer[]" />
+          </param-list>
+          	<ret-val type="[I[]"/>
+        </operation>
+		<operation name="cercaVieByStradario" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Boolean" />
+          </param-list>
+          	<ret-val type="[Lit.csi.sitad.tpnm.entity.Via;[]"/>
+        </operation>
+		<operation name="cercaVieRinominate" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="java.util.Vector"/>
+        </operation>
+		<operation name="cercaIdAstaByCivico" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="java.lang.Integer"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer[]" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.String" />
+			<param name="p8" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="int[]" />
+			<param name="p2" type="int[]" />
+			<param name="p3" type="int[]" />
+			<param name="p4" type="int[]" />
+			<param name="p5" type="int" />
+			<param name="p6" type="boolean" />
+			<param name="p7" type="java.lang.String" />
+			<param name="p8" type="int" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Boolean" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.String" />
+			<param name="p8" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Integer" />
+			<param name="p4" type="java.lang.Integer" />
+			<param name="p5" type="java.lang.Boolean" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer[]" />
+			<param name="p5" type="java.lang.Boolean" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.String" />
+			<param name="p8" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer[]" />
+			<param name="p5" type="java.lang.Boolean" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaNomiViaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.NomeVia[]"/>
+        </operation>
+		<operation name="cercaNomiViaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.String" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.NomeVia[]"/>
+        </operation>
+		<operation name="cercaNomiViaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="java.lang.String" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.NomeVia[]"/>
+        </operation>
+		<operation name="cercaNomiViaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.NomeVia[]"/>
+        </operation>
+		<operation name="cercaTipiViaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.TipoVia[]"/>
+        </operation>
+		<operation name="cercaTipiViaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.TipoVia[]"/>
+        </operation>
+		<operation name="cercaTipiViaByNomeCompleto" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.TipoVia[]"/>
+        </operation>
+		<operation name="cercaVieAlternativeByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer[]" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.String" />
+			<param name="p8" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaNomiViaAlternativiByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.NomeVia[]"/>
+        </operation>
+		<operation name="cercaViaAternativaById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via"/>
+        </operation>
+		<operation name="cercaVieAlternativeByNomeAndIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.String[]" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Boolean" />
+			<param name="p4" type="java.lang.String" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieByNomeAndIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.String[]" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Boolean" />
+			<param name="p4" type="java.lang.String" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.Via[]"/>
+        </operation>
+		<operation name="cercaVieLTById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer[]" />
+			<param name="p1" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.ViaLT[]"/>
+        </operation>
+		<operation name="cercaVieLTByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer[]" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer[]" />
+			<param name="p4" type="java.lang.Integer[]" />
+			<param name="p5" type="java.lang.Integer" />
+			<param name="p6" type="java.lang.Boolean" />
+			<param name="p7" type="java.lang.String" />
+			<param name="p8" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.ViaLT[]"/>
+        </operation>
+		<operation name="cercaVieLTByNomeAndIstat" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.String[]" />
+			<param name="p2" type="java.lang.Integer" />
+			<param name="p3" type="java.lang.Boolean" />
+			<param name="p4" type="java.lang.String" />
+			<param name="p5" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.ViaLT[]"/>
+        </operation>
+		<operation name="inserisciViaProposta" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Integer" />
+			<param name="p2" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.ViaProposta"/>
+        </operation>
+		<operation name="cercaViaPropostaById" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.Integer" />
+			<param name="p1" type="java.lang.Boolean" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.ViaProposta"/>
+        </operation>
+		<operation name="cercaViaPropostaByNome" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.Boolean" />
+			<param name="p2" type="java.lang.Integer[]" />
+			<param name="p3" type="java.lang.Integer" />
+          </param-list>
+          	<ret-val type="it.csi.sitad.tpnm.entity.ViaProposta[]"/>
+        </operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="siceeorch.topetopo.ejb"
+        class="it.csi.csi.porte.ejb.PortaDelegataEJB"
+        url-pa="PA_Topo"
+        url-qm="tope.ejb.ApplTopeTopoQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="@tope.tope.topetopo.pa.url@"/>
+          <!-- initial contxt factory per WLS92 -->
+          <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>

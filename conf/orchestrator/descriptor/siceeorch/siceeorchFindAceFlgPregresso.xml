@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartFindAce" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.findaceflgpregresso.AAStartFindAceHandler</arg>
+						<arg name="input.binding.0">filtro=SLOT_input</arg>
+						<arg name="input.binding.1">flgPregresso=SLOT_flgPregresso</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertToInputParamAce" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.findaceflgpregresso.CTXConvertToInputParamAceHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_input</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceeorch.dto.siceeorch.FiltroRicercaAce</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_inputPd</arg>
+						<arg name="output.slot.class">it.csi.sicee.siceesrv.dto.siceesrv.FiltroRicercaAce</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="FindAce" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.findaceflgpregresso.PAPDFindAceHandler</arg>	 	
+						<arg name="selectorPD">selector_siceesrv_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_siceesrv.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="104">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.csi.sicee.siceesrv.exception.siceesrv.SiceesrvException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="103">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="FindAceResult" id="103">
+		<actions>
+			<action name="next" id="1103">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.findaceflgpregresso.CTXFindAceResultHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_ace</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceesrv.dto.siceesrv.Ace</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_result</arg>
+						<arg name="output.slot.class">it.csi.sicee.siceeorch.dto.siceeorch.Ace</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="104">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopFindAce" id="104">
+		<actions>
+			<action name="next" id="1104">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.findaceflgpregresso.ZZStopFindAceHandler</arg>
+						<arg name="output.binding">SLOT_result</arg>
+						
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

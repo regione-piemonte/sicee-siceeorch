@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy-descriptor 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="../../conf/deploy-descriptor.xsd">
+	<rilascio
+		ambiente="@rilascio.ambiente@"
+		cliente="@rilascio.cliente@"
+		istanza="@rilascio.istanza@"
+		unita-installazione="siceeorch"
+		staging="false">
+		<prodotto codice="SICEE" versione="10.0.0">
+			<descrizione>@prodotto.descrizione@</descrizione>
+		</prodotto>
+		<componente codice="SICEEORCH">
+			<descrizione>@componente.descrizione@</descrizione>
+		</componente>
+	</rilascio>
+	<lista-servizi>
+		<servizio nome="siceeorch" versione-intf="6.1.0" versione-impl="6.1.0" tipo-servizio="O" tipo-erogazione="O">
+			<versione-retrocompatibile>true</versione-retrocompatibile>
+		</servizio>
+	</lista-servizi>
+	<lista-binding>
+	    <binding servizio="siceeorch" versione="6.1.0" protocollo="CSI-java-jnp">
+			<endpoint>
+				<csi-endpoint pd-file="defpd_siceeorch_CSI_java_jnp.xml">
+					<override-url>@sicee.siceeorch.siceeorch.pa.url@</override-url>
+				</csi-endpoint>
+			</endpoint>
+		</binding>
+	</lista-binding>
+</deploy-descriptor>

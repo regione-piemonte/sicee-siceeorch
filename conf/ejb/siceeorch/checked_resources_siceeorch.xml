@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiagnosticEngineConfig>
+<!--PROTECTED REGION ID(R652649672) ENABLED START-->
+	<!--<Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_CTSERV"
+    codSistema = "CTSERV"
+    codRisorsa = "CTSERV"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_ctservtopon.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>-->
+  
+  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_INDEX"
+    codSistema = "INDEX"
+    codRisorsa = "MNGMT"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_indexmngmt.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_INDEX"
+    codSistema = "INDEX"
+    codRisorsa = "SEARCH"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_indexsearch.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_INDEX"
+    codSistema = "INDEX"
+    codRisorsa = "SECURITY"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_indexsecurity.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+ <!--  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_IRIDE2"
+    codSistema = "IRIDE2"
+    codRisorsa = "PEP"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_iridepep.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>-->
+  
+  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_MDPNEW"
+    codSistema = "MDPNEW"
+    codRisorsa = "MDPNEW"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_mdpnew.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+   <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_SICEE"
+    codSistema = "SICEESRV"
+    codRisorsa = "SICEESRV"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_siceesrv.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+   <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_TAVT"
+    codSistema = "TAVT"
+    codRisorsa = "TAVT"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_tavt.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+    <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_TOPE"
+    codSistema = "TOPE"
+    codRisorsa = "LMAMM"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_topelmamm.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+   <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_TOPE"
+    codSistema = "TOPE"
+    codRisorsa = "TOPO"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_topetopo.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+  
+   <Caller
+    classe = "it.csi.coopdiag.engine.plugin.pdpa.PDPACaller"
+    name = "PDPA_DOSIGN"
+    codSistema = "DOSIGN"
+    codRisorsa = "DOSIGN"
+    codTipoRisorsa = "pd-pa"
+    descrTipoRisorsa = "Infrastruttura di cooperazione C.S.I">
+    <Properties>
+      <Property name="pdDefConfigType" value="resource"/>
+      <Property name="pdDefConfigLocation" value="/defpd_verificamarcafirma.xml"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+	<!--
+	inserire qui la cofigurazione delle risorse invocate dal servizio.
+	(consultare la documentazione di coop diag per i dettagli sulla
+	configurazione dei caller).
+	esempi:
+  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.dbms.DSCaller"
+    name = "SICEE_DB"
+    codSistema = "SICEE"
+    codRisorsa = "SICEE_DB"
+    codTipoRisorsa = "dbms-ds"
+    descrTipoRisorsa = "Database via Datasource JDBC">
+    <Properties>
+      <Property name="jndiName" value="java:comp/env/piolDS"/>
+      <Property name="configQuery" value="SELECT SYSDATE FROM DUAL"/>
+      <Property name="checkTimeout" value="10000"/>
+    </Properties>
+  </Caller>
+ 
+  
+  -->   
+  <!-- il caller che segue e' stato inserito per non far fallire il caricamento
+       della configurazione 
+  <Caller
+    classe = "it.csi.coopdiag.engine.plugin.fs.FSCaller"
+    name = "DUMMY_FS"
+    codSistema = "sicee"
+    codRisorsa = "sicee_FS"
+    codTipoRisorsa = "fs-rw"
+    descrTipoRisorsa = "File system">
+    <Properties>
+      <Property name="path.root" value="."/>
+      <Property name="path.permission" value="rw"/>
+      <Property name="path.filetoread" value="TAPPO.txt"/>
+    </Properties>
+  </Caller>-->
+<!--PROTECTED REGION END-->
+</DiagnosticEngineConfig>
+	

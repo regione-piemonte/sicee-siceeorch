@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osworkflow>
+  <!-- corregge il bug di memory leak -->
+  <persistence class="it.csi.svcflow.orchestrator.store.StatelessWorkflowEntryStore" />
+  <factory class="com.opensymphony.workflow.loader.XMLWorkflowFactory">
+    <property key="resource" value="workflows.xml" />
+  </factory> 
+</osworkflow>

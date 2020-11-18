@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow PUBLIC "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN" "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd">
+<!-- definizione di workflow generata a partire dal modello dell'orchestrazione -->
+<workflow>
+	<initial-actions>
+		<action id="0" name="Start Workflow">
+			<results>
+				<unconditional-result id="5" old-status="Finished"
+					status="Queued" step="1" />
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step name="Inizio" id="1">
+		<actions>
+			<action name="vaiInFondo" id="100">
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="100">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+		</step>
+	
+	<step name="StartCancellaDocumento" id="100">
+		<actions>
+			<action name="next" id="1100">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.cancelladocumento.AAStartCancellaDocumentoHandler</arg>
+						<arg name="input.binding.0">documento=SLOT_docCan</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="101">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertDocumentoToNode" id="101">
+		<actions>
+			<action name="next" id="1101">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.cancelladocumento.CTXConvertDocumentoToNodeHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_docCan</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceeorch.dto.siceeorch.Documento</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_nodeCan</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.Node</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="102">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="ConvertDocumentoToOperationContext" id="102">
+		<actions>
+			<action name="next" id="1102">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">
+							it.csi.sicee.siceeorch.business.siceeorch.handlers.cancelladocumento.CTXConvertDocumentoToOperationContextHandler
+						</arg>	
+						
+						<!-- configurazione degli input slot -->
+						<arg name="input.slot.name.0">SLOT_docCan</arg>
+						<arg name="input.slot.class.0">it.csi.sicee.siceeorch.dto.siceeorch.Documento</arg>
+						<!-- configurazione dell'output slot -->
+						<arg name="output.slot.name">SLOT_operationContextCan</arg>
+						<arg name="output.slot.class">it.doqui.index.ecmengine.dto.OperationContext</arg>
+
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="103">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+
+	<step name="DeleteContent" id="103">
+		<actions>
+			<action name="next" id="1103">
+				<pre-functions>
+				    <function type="class">
+						<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.cancelladocumento.PAPDDeleteContentHandler</arg>	 	
+						<arg name="selectorPD">selector_index_mngmt_ejbpa.properties</arg>
+						
+						<arg name="servicePD">defpd_indexmngmt.xml</arg>
+					</function>
+				</pre-functions>
+				<results>
+					<result old-status="Queued"
+						status="Finished" step="104">
+						<conditions>
+							<condition type="class">
+  								<arg name="class.name">it.csi.sicee.siceeorch.business.handlers.ExceptionRaisedCondition</arg>
+  								<arg name="handled.exceptions">it.doqui.index.ecmengine.exception.publishing.engine.management.DeleteException,it.doqui.index.ecmengine.exception.EcmEngineException,it.doqui.index.ecmengine.exception.InvalidParameterException,it.doqui.index.ecmengine.exception.publishing.NoSuchNodeException,it.doqui.index.ecmengine.exception.publishing.PermissionDeniedException,java.rmi.RemoteException</arg> 
+  							</condition>
+  						</conditions>
+					</result>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="104">
+					</unconditional-result>
+				</results>	
+			</action>
+		</actions>
+	</step>
+
+	<step name="StopCancellaDocumento" id="104">
+		<actions>
+			<action name="next" id="1104">
+				<pre-functions>
+				    <function type="class">
+				    	<arg name="class.name">it.csi.sicee.siceeorch.business.siceeorch.handlers.cancelladocumento.ZZStopCancellaDocumentoHandler</arg>
+						
+						<arg name="exception.mapping.from.0">it.doqui.index.ecmengine.exception.publishing.engine.management.DeleteException</arg>
+						<arg name="exception.mapping.to.0">it.csi.sicee.siceeorch.exception.siceeorch.DocumentoException</arg>
+						<arg name="exception.mapping.msg.0">Il documento non e' stato cancellato</arg>
+						
+					</function>
+				</pre-functions>
+				<results>
+					<unconditional-result old-status="Queued"
+						status="Finished" step="9999">
+					</unconditional-result>
+				</results>
+			</action>
+		</actions>
+	</step>
+		<step name="Fine" id="9999"></step>
+	</steps>
+</workflow>

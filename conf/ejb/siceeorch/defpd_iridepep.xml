@@ -1,0 +1,122 @@
+<porta-delegata name="siceeorch.iridepep">
+  <services>
+  
+<service name="iridepep" public-interface-class="it.csi.iride2.policy.interfaces.PolicyEnforcerBaseService" top-version="1.0">
+      <operations>
+		<operation name="identificaUserPassword" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.policy.entity.Identita"/>
+        </operation>
+		<operation name="identificaUserPasswordPIN" type="synch-call" >
+          <param-list>
+			<param name="p0" type="java.lang.String" />
+			<param name="p1" type="java.lang.String" />
+			<param name="p2" type="java.lang.String" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.policy.entity.Identita"/>
+        </operation>
+		<operation name="identificaCertificato" type="synch-call" >
+          <param-list>
+			<param name="p0" type="byte[]" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.policy.entity.Identita"/>
+        </operation>
+		<operation name="isPersonaAutorizzataInUseCase" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.UseCase" />
+          </param-list>
+          	<ret-val type="java.lang.Boolean"/>
+        </operation>
+		<operation name="isPersonaInRuolo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.iridefed.entity.Ruolo" />
+          </param-list>
+          	<ret-val type="java.lang.Boolean"/>
+        </operation>
+		<operation name="getInfoPersonaInUseCase" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.UseCase" />
+          </param-list>
+          	<ret-val type="java.lang.String"/>
+        </operation>
+		<operation name="findRuoliForPersonaInUseCase" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.UseCase" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.iridefed.entity.Ruolo[]"/>
+        </operation>
+		<operation name="findRuoliForPersonaInApplication" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Application" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.iridefed.entity.Ruolo[]"/>
+        </operation>
+		<operation name="findUseCasesForPersonaInApplication" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Application" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.policy.entity.UseCase[]"/>
+        </operation>
+		<operation name="findActorsForPersonaInApplication" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.Application" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.policy.entity.Actor[]"/>
+        </operation>
+		<operation name="findActorsForPersonaInUseCase" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+			<param name="p1" type="it.csi.iride2.policy.entity.UseCase" />
+          </param-list>
+          	<ret-val type="it.csi.iride2.policy.entity.Actor[]"/>
+        </operation>
+		<operation name="isIdentitaAutentica" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.policy.entity.Identita" />
+          </param-list>
+          	<ret-val type="java.lang.Boolean"/>
+        </operation>
+		<operation name="getInfoPersonaSchema" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.iride2.iridefed.entity.Ruolo" />
+          </param-list>
+          	<ret-val type="java.lang.String"/>
+        </operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="siceeorch.iridepep.ejb"
+        class="it.csi.csi.porte.ejb.PortaDelegataEJB"
+        url-pa="iride2.policy.PolicyEnforcementPoint_PA"
+        url-qm="iridepep.ejb.ApplIridePepQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="@iridev2.iridepep.iridepep.pa.url@"/>
+          <!-- initial contxt factory per WLS92 -->
+          <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>

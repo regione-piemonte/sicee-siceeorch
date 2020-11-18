@@ -1,0 +1,9 @@
+<ivy-module version="1.0">
+    <info
+        organisation="csipiemonte"
+        module="siceeorch-siceeorch-client"
+        revision="6.1.0" />
+    <publications>
+        <artifact name="siceeorch-siceeorch-client-6.1.0" type="jar" />   
+    </publications>
+</ivy-module>

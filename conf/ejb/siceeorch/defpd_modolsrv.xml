@@ -1,0 +1,214 @@
+<porta-delegata name="siceeorch.modolsrv">
+  <services>
+  
+<service name="modolsrv" public-interface-class="it.csi.modol.modolsrv.interfacecsi.ModolSrvITF" top-version="1.0">
+      <operations>
+		<operation name="elencoModelli" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Modello[]"/>
+        </operation>
+		<operation name="elencoApplicazioniGestite" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Applicazione[]"/>
+        </operation>
+		<operation name="inserisciRisorsePerModulo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.richieste.RichiestaInserimentoRisorsa" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.esiti.EsitoInserimentoRisorsa"/>
+        </operation>
+		<operation name="eliminaRisorse" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.richieste.RichiestaCancellazioneRisorse" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.esiti.EsitoCancellazioneRisorse"/>
+        </operation>
+		<operation name="processForm" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.ProcessFormRequest" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.ProcessFormResponse"/>
+        </operation>
+		<operation name="inserisciModello" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.Modello" />
+			<param name="p3" type="it.csi.modol.modolsrv.dto.UploadContent" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.esiti.EsitoInserimentoModello"/>
+        </operation>
+		<operation name="salvaSuIndex" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.index.IndexCredentials" />
+			<param name="p3" type="byte[]" />
+			<param name="p4" type="it.csi.modol.modolsrv.dto.index.MetadatoIndex" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.index.RiferimentoIndex"/>
+        </operation>
+		<operation name="ricercaModuli" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.criteri.CriterioRicercaModulo" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Modulo[]"/>
+        </operation>
+		<operation name="mergeModulo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.Modulo" />
+			<param name="p3" type="it.csi.modol.modolsrv.dto.XmlModel" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Modulo"/>
+        </operation>
+		<operation name="inserisciModulo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Ruolo[]" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p3" type="it.csi.modol.modolsrv.dto.Modulo" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.esiti.EsitoInserimentoModulo"/>
+        </operation>
+		<operation name="ricercaModelli" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.criteri.CriterioRicercaModello" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Modello[]"/>
+        </operation>
+		<operation name="aggiornaModulo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.richieste.RichiestaAggiornamentoModulo" />
+          </param-list>
+          	<ret-val type="void"/>
+        </operation>
+		<operation name="cancellaModulo" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.richieste.RichiestaCancellazioneModulo" />
+          </param-list>
+          	<ret-val type="void"/>
+        </operation>
+		<operation name="cancellaModello" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.richieste.RichiestaCancellazioneModello" />
+          </param-list>
+          	<ret-val type="void"/>
+        </operation>
+		<operation name="validaFirme" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.signature.richieste.VerifySignatureRequest" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.signature.esiti.VerifySignatureResponse"/>
+        </operation>
+		<operation name="trovaRisorseAssociate" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.richieste.RichiestaRisorse" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.RisorseAssociate"/>
+        </operation>
+		<operation name="inserisciApplicazione" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.Ruolo[]" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.esiti.EsitoInserimentoApplicazione"/>
+        </operation>
+		<operation name="elencoRuoliAssociati" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Ruolo[]"/>
+        </operation>
+		<operation name="elencoRendererModality" type="synch-call" >
+          <param-list>
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.RendererModality[]"/>
+        </operation>
+		<operation name="extendedProcessForm" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.ExtendedProcessFormRequest" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.ExtendedProcessFormResponse"/>
+        </operation>
+		<operation name="elencoModuliDisponibili" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Modulo[]"/>
+        </operation>
+		<operation name="mergeModuloConAllegati" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.Utente" />
+			<param name="p2" type="it.csi.modol.modolsrv.dto.Modulo" />
+			<param name="p3" type="it.csi.modol.modolsrv.dto.XmlModel" />
+			<param name="p4" type="it.csi.modol.modolsrv.dto.Allegato[]" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.Modulo"/>
+        </operation>
+		<operation name="invokeWorkbenchProcess" type="synch-call" >
+          <param-list>
+			<param name="p0" type="it.csi.modol.modolsrv.dto.Applicazione" />
+			<param name="p1" type="it.csi.modol.modolsrv.dto.process.ProcessInvocationRequest" />
+          </param-list>
+          	<ret-val type="it.csi.modol.modolsrv.dto.process.ProcessInvocationResponse"/>
+        </operation>
+      </operations>
+    </service>
+
+  </services>
+  <config>
+    <url-pa>**not used**</url-pa>
+    <pluggable-pd-list chooser-class="it.csi.csi.porte.FixedDelegateChooser">
+      <pluggable-pd
+        name="siceeorch.modolsrv.ejb"
+        class="it.csi.csi.porte.ejb20.PortaDelegataEJB"
+        url-pa="modol.modolsrv.ejb.ModolSrvPA"
+        url-qm="modolsrv.ejb.ApplModolsrvQMGR">
+        <properties>
+          <property name="java.naming.provider.url" value="@modol.modolsrv.modolsrv.pa.url@"/>
+          <!-- initial contxt factory per WLS92 -->
+          <property name="java.naming.factory.initial" value="weblogic.jndi.WLInitialContextFactory" />
+        </properties>
+      </pluggable-pd>
+    </pluggable-pd-list>
+    <pre-function-handler-list>
+    	
+		</pre-function-handler-list>
+		<post-function-handler-list>
+		
+		</post-function-handler-list>
+    <queue-manager url=""/>
+  </config>
+</porta-delegata>
